@@ -3,8 +3,12 @@ package Proxy;
 import static Proxy.LoginStatus.*;
 
 // This class could also be a singleton
+// For this to be a proxy it MUST implement the same interface as the class it
+// is a proxy for.
 public class LoggerProxy implements ILogger {
-    // This could also reference the logger singleton if it was written as a singleton
+    // This could also reference the Logger singleton if it was written as a singleton
+    // How would you rewrite this class to use dependency injection? What could your
+    // motivation be for wanting this class to use dependency injection?
     private ILogger logger = new Logger();
 
     @Override
@@ -75,6 +79,7 @@ public class LoggerProxy implements ILogger {
         }
     }
 
+    // This method is what determines if a user has permission to perform an action
     private boolean allowedAction(LoginStatus loginStatus, String path) {
         // Admins can do anything
        return loginStatus == ADMIN
