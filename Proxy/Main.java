@@ -2,10 +2,7 @@ package Proxy;
 
 // Static imports to simplify setting/using the enum
 
-import static Proxy.LoginStatus.ADMIN;
-import static Proxy.LoginStatus.REGULAR_USER;
-import static Proxy.LoginStatus.LOGGED_OUT;
-import static Proxy.LoginStatus.GUEST;
+import static Proxy.LoginStatus.*;
 
 import java.util.Scanner;
 
