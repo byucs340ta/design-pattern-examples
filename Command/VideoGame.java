@@ -4,39 +4,39 @@ class VideoGame {
 
     private static VideoGame _instance = new VideoGame();
 
-    public static void move(int player, Location newLoc) {
-        _instance._move(player, newLoc);
+    public static void move(Location newLoc) {
+        _instance._move(newLoc);
     }
 
-    public static void jump(int player) {
-        _instance._jump(player);
+    public static void jump() {
+        _instance._jump();
     }
 
-    public static void raiseShield(int player) {
-        _instance._raiseShield(player);
+    public static void raiseShield() {
+        _instance._raiseShield();
     }
 
-    public static void swingSword(int player, int angle, int speed) {
-        _instance._swingSword(player, angle, speed);
+    public static void swingSword(Swing swing) {
+        _instance._swingSword(swing);
     }
 
 
     private VideoGame() { }
 
-    private void _move(int player, Location newLoc) {
-        System.out.println(String.format("Player %d moved to %s", player, newLoc));
+    private void _move(Location newLoc) {
+        System.out.println(String.format("You moved to %s", newLoc));
     }
 
-    private void _jump(int player) {
-        System.out.println(String.format("Player %d jumped", player));
+    private void _jump() {
+        System.out.println("You jumped");
     }
 
-    private void _raiseShield(int player) {
-        System.out.println(String.format("Player %d raised their sheild", player));
+    private void _raiseShield() {
+        System.out.println("You raised their shield");
     }
 
-    private void _swingSword(int player, int angle, int speed) {
+    private void _swingSword(Swing swing) {
         System.out.println(String.format(
-                "Player %d swung their sword at angle %d with speed %d", player, angle, speed));
+                "You swung your sword at angle %d with speed %d", swing.getAngle(), swing.getSpeed()));
     }
 }
