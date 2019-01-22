@@ -18,7 +18,11 @@ class GenericCommand implements Command {
 
     @Override
     public void execute() {
+        System.out.println(String.format("Executing a generic command for method %s on class %s", _methodName, _className));
         try {
+            // This only works for static methods.
+            // How would you modify this to work on instance methods?
+            // How would you modify this to work for a singleton's instance methods?
             Class<?> receiver = Class.forName(_className);
             Method method = receiver.getMethod(_methodName, _paramTypes);
             method.invoke(null, _paramValues);
