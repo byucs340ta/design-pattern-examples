@@ -1,15 +1,13 @@
 package Command;
 
 class RaiseShieldCommand implements Command {
-    private int _player;
 
-    public RaiseShieldCommand(int player) {
-        _player = player;
-    }
+    public RaiseShieldCommand() {}
 
     @Override
     public void execute() {
-        VideoGame.raiseShield(_player);
+        System.out.println("Executing Raise Shield Command");
+        VideoGame.raiseShield();
     }
 }
 

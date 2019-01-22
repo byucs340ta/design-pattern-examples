@@ -1,15 +1,13 @@
 package Command;
 
 class JumpCommand implements Command {
-    private int _player;
 
-    public JumpCommand(int player) {
-        _player = player;
-    }
+    public JumpCommand() { }
 
     @Override
     public void execute() {
-        VideoGame.jump(_player);
+        System.out.println("Executing Jump Command");
+        VideoGame.jump();
     }
 }
 
