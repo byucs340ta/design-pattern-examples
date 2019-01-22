@@ -1,18 +1,15 @@
 package Command;
 
 class SwingSwordCommand implements Command {
-    private int _player;
-    private int _angle;
-    private int _speed;
+    private Swing _swing;
 
-    public SwingSwordCommand(int player, int angle, int speed) {
-        _player = player;
-        _angle = angle;
-        _speed = speed;
+    public SwingSwordCommand(Swing swing) {
+        _swing = swing;
     }
 
     @Override
     public void execute() {
-        VideoGame.swingSword(_player, _angle, _speed);
+        System.out.println("Executing Swing Sword Command");
+        VideoGame.swingSword(_swing);
     }
 }
